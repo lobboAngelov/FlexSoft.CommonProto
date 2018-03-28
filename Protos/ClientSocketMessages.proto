@@ -27,6 +27,16 @@ message ArduinoJoin {
 	int32 rfIdCard = 2;
 }
 
+
+
+message Logout{
+	int32 rfIdCardNo = 1;
+	int32 set= 2;
+	int32 restTimer= 3;
+}
+
+
+
 message ArduinoWorkoutAction{
 	
 }

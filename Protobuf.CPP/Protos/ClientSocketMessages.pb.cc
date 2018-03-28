@@ -38,6 +38,11 @@ class ArduinoJoinDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<ArduinoJoin>
       _instance;
 } _ArduinoJoin_default_instance_;
+class LogoutDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Logout>
+      _instance;
+} _Logout_default_instance_;
 class ArduinoWorkoutActionDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ArduinoWorkoutAction>
@@ -122,6 +127,27 @@ void InitDefaultsArduinoJoin() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsArduinoJoinImpl);
 }
 
+void InitDefaultsLogoutImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  {
+    void* ptr = &::_Logout_default_instance_;
+    new (ptr) ::Logout();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::Logout::InitAsDefaultInstance();
+}
+
+void InitDefaultsLogout() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsLogoutImpl);
+}
+
 void InitDefaultsArduinoWorkoutActionImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -186,7 +212,7 @@ void InitDefaultsWebClientActionJoin() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsWebClientActionJoinImpl);
 }
 
-::google::protobuf::Metadata file_level_metadata[6];
+::google::protobuf::Metadata file_level_metadata[7];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -215,6 +241,14 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ArduinoJoin, arduinoid_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ArduinoJoin, rfidcard_),
   ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Logout, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Logout, rfidcardno_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Logout, set_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Logout, resttimer_),
+  ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ArduinoWorkoutAction, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -237,15 +271,17 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 0, -1, sizeof(::MessageFromClient)},
   { 9, -1, sizeof(::ArduinoAction)},
   { 17, -1, sizeof(::ArduinoJoin)},
-  { 24, -1, sizeof(::ArduinoWorkoutAction)},
-  { 29, -1, sizeof(::WebClientAction)},
-  { 36, -1, sizeof(::WebClientActionJoin)},
+  { 24, -1, sizeof(::Logout)},
+  { 32, -1, sizeof(::ArduinoWorkoutAction)},
+  { 37, -1, sizeof(::WebClientAction)},
+  { 44, -1, sizeof(::WebClientActionJoin)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::_MessageFromClient_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_ArduinoAction_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_ArduinoJoin_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_Logout_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_ArduinoWorkoutAction_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_WebClientAction_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_WebClientActionJoin_default_instance_),
@@ -267,7 +303,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 6);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 7);
 }
 
 void AddDescriptorsImpl() {
@@ -282,15 +318,16 @@ void AddDescriptorsImpl() {
       "\000\0225\n\024arduinoWorkoutAction\030\002 \001(\0132\025.Arduin"
       "oWorkoutActionH\000B\t\n\007message\"2\n\013ArduinoJo"
       "in\022\021\n\tarduinoId\030\001 \001(\005\022\020\n\010rfIdCard\030\002 \001(\005\""
-      "\026\n\024ArduinoWorkoutAction\"Q\n\017WebClientActi"
-      "on\0223\n\023webClientActionJoin\030\001 \001(\0132\024.WebCli"
-      "entActionJoinH\000B\t\n\007message\")\n\023WebClientA"
-      "ctionJoin\022\022\n\nrfIdCardNo\030\001 \001(\005*0\n\nClientT"
-      "ype\022\022\n\016ARDUINO_CLIENT\020\000\022\016\n\nWEB_CLIENT\020\001b"
-      "\006proto3"
+      "<\n\006Logout\022\022\n\nrfIdCardNo\030\001 \001(\005\022\013\n\003set\030\002 \001"
+      "(\005\022\021\n\trestTimer\030\003 \001(\005\"\026\n\024ArduinoWorkoutA"
+      "ction\"Q\n\017WebClientAction\0223\n\023webClientAct"
+      "ionJoin\030\001 \001(\0132\024.WebClientActionJoinH\000B\t\n"
+      "\007message\")\n\023WebClientActionJoin\022\022\n\nrfIdC"
+      "ardNo\030\001 \001(\005*0\n\nClientType\022\022\n\016ARDUINO_CLI"
+      "ENT\020\000\022\016\n\nWEB_CLIENT\020\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 567);
+      descriptor, 629);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Protos/ClientSocketMessages.proto", &protobuf_RegisterTypes);
 }
@@ -1347,6 +1384,322 @@ void ArduinoJoin::InternalSwap(ArduinoJoin* other) {
 }
 
 ::google::protobuf::Metadata ArduinoJoin::GetMetadata() const {
+  protobuf_Protos_2fClientSocketMessages_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_Protos_2fClientSocketMessages_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void Logout::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Logout::kRfIdCardNoFieldNumber;
+const int Logout::kSetFieldNumber;
+const int Logout::kRestTimerFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Logout::Logout()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_Protos_2fClientSocketMessages_2eproto::InitDefaultsLogout();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Logout)
+}
+Logout::Logout(const Logout& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&rfidcardno_, &from.rfidcardno_,
+    static_cast<size_t>(reinterpret_cast<char*>(&resttimer_) -
+    reinterpret_cast<char*>(&rfidcardno_)) + sizeof(resttimer_));
+  // @@protoc_insertion_point(copy_constructor:Logout)
+}
+
+void Logout::SharedCtor() {
+  ::memset(&rfidcardno_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&resttimer_) -
+      reinterpret_cast<char*>(&rfidcardno_)) + sizeof(resttimer_));
+  _cached_size_ = 0;
+}
+
+Logout::~Logout() {
+  // @@protoc_insertion_point(destructor:Logout)
+  SharedDtor();
+}
+
+void Logout::SharedDtor() {
+}
+
+void Logout::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Logout::descriptor() {
+  ::protobuf_Protos_2fClientSocketMessages_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_Protos_2fClientSocketMessages_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Logout& Logout::default_instance() {
+  ::protobuf_Protos_2fClientSocketMessages_2eproto::InitDefaultsLogout();
+  return *internal_default_instance();
+}
+
+Logout* Logout::New(::google::protobuf::Arena* arena) const {
+  Logout* n = new Logout;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Logout::Clear() {
+// @@protoc_insertion_point(message_clear_start:Logout)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&rfidcardno_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&resttimer_) -
+      reinterpret_cast<char*>(&rfidcardno_)) + sizeof(resttimer_));
+  _internal_metadata_.Clear();
+}
+
+bool Logout::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Logout)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int32 rfIdCardNo = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &rfidcardno_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 set = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &set_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 restTimer = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &resttimer_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Logout)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Logout)
+  return false;
+#undef DO_
+}
+
+void Logout::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Logout)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 rfIdCardNo = 1;
+  if (this->rfidcardno() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->rfidcardno(), output);
+  }
+
+  // int32 set = 2;
+  if (this->set() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->set(), output);
+  }
+
+  // int32 restTimer = 3;
+  if (this->resttimer() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->resttimer(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Logout)
+}
+
+::google::protobuf::uint8* Logout::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:Logout)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 rfIdCardNo = 1;
+  if (this->rfidcardno() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->rfidcardno(), target);
+  }
+
+  // int32 set = 2;
+  if (this->set() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->set(), target);
+  }
+
+  // int32 restTimer = 3;
+  if (this->resttimer() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->resttimer(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Logout)
+  return target;
+}
+
+size_t Logout::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Logout)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // int32 rfIdCardNo = 1;
+  if (this->rfidcardno() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->rfidcardno());
+  }
+
+  // int32 set = 2;
+  if (this->set() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->set());
+  }
+
+  // int32 restTimer = 3;
+  if (this->resttimer() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->resttimer());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Logout::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:Logout)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Logout* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Logout>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Logout)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:Logout)
+    MergeFrom(*source);
+  }
+}
+
+void Logout::MergeFrom(const Logout& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:Logout)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.rfidcardno() != 0) {
+    set_rfidcardno(from.rfidcardno());
+  }
+  if (from.set() != 0) {
+    set_set(from.set());
+  }
+  if (from.resttimer() != 0) {
+    set_resttimer(from.resttimer());
+  }
+}
+
+void Logout::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:Logout)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Logout::CopyFrom(const Logout& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Logout)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Logout::IsInitialized() const {
+  return true;
+}
+
+void Logout::Swap(Logout* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Logout::InternalSwap(Logout* other) {
+  using std::swap;
+  swap(rfidcardno_, other->rfidcardno_);
+  swap(set_, other->set_);
+  swap(resttimer_, other->resttimer_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Logout::GetMetadata() const {
   protobuf_Protos_2fClientSocketMessages_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_Protos_2fClientSocketMessages_2eproto::file_level_metadata[kIndexInFileMessages];
 }

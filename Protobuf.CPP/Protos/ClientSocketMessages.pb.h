@@ -37,7 +37,7 @@ namespace protobuf_Protos_2fClientSocketMessages_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[6];
+  static const ::google::protobuf::internal::ParseTable schema[7];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -49,6 +49,8 @@ void InitDefaultsArduinoActionImpl();
 void InitDefaultsArduinoAction();
 void InitDefaultsArduinoJoinImpl();
 void InitDefaultsArduinoJoin();
+void InitDefaultsLogoutImpl();
+void InitDefaultsLogout();
 void InitDefaultsArduinoWorkoutActionImpl();
 void InitDefaultsArduinoWorkoutAction();
 void InitDefaultsWebClientActionImpl();
@@ -59,6 +61,7 @@ inline void InitDefaults() {
   InitDefaultsMessageFromClient();
   InitDefaultsArduinoAction();
   InitDefaultsArduinoJoin();
+  InitDefaultsLogout();
   InitDefaultsArduinoWorkoutAction();
   InitDefaultsWebClientAction();
   InitDefaultsWebClientActionJoin();
@@ -73,6 +76,9 @@ extern ArduinoJoinDefaultTypeInternal _ArduinoJoin_default_instance_;
 class ArduinoWorkoutAction;
 class ArduinoWorkoutActionDefaultTypeInternal;
 extern ArduinoWorkoutActionDefaultTypeInternal _ArduinoWorkoutAction_default_instance_;
+class Logout;
+class LogoutDefaultTypeInternal;
+extern LogoutDefaultTypeInternal _Logout_default_instance_;
 class MessageFromClient;
 class MessageFromClientDefaultTypeInternal;
 extern MessageFromClientDefaultTypeInternal _MessageFromClient_default_instance_;
@@ -479,6 +485,119 @@ class ArduinoJoin : public ::google::protobuf::Message /* @@protoc_insertion_poi
 };
 // -------------------------------------------------------------------
 
+class Logout : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Logout) */ {
+ public:
+  Logout();
+  virtual ~Logout();
+
+  Logout(const Logout& from);
+
+  inline Logout& operator=(const Logout& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Logout(Logout&& from) noexcept
+    : Logout() {
+    *this = ::std::move(from);
+  }
+
+  inline Logout& operator=(Logout&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Logout& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Logout* internal_default_instance() {
+    return reinterpret_cast<const Logout*>(
+               &_Logout_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    3;
+
+  void Swap(Logout* other);
+  friend void swap(Logout& a, Logout& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Logout* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  Logout* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const Logout& from);
+  void MergeFrom(const Logout& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(Logout* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 rfIdCardNo = 1;
+  void clear_rfidcardno();
+  static const int kRfIdCardNoFieldNumber = 1;
+  ::google::protobuf::int32 rfidcardno() const;
+  void set_rfidcardno(::google::protobuf::int32 value);
+
+  // int32 set = 2;
+  void clear_set();
+  static const int kSetFieldNumber = 2;
+  ::google::protobuf::int32 set() const;
+  void set_set(::google::protobuf::int32 value);
+
+  // int32 restTimer = 3;
+  void clear_resttimer();
+  static const int kRestTimerFieldNumber = 3;
+  ::google::protobuf::int32 resttimer() const;
+  void set_resttimer(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:Logout)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 rfidcardno_;
+  ::google::protobuf::int32 set_;
+  ::google::protobuf::int32 resttimer_;
+  mutable int _cached_size_;
+  friend struct ::protobuf_Protos_2fClientSocketMessages_2eproto::TableStruct;
+  friend void ::protobuf_Protos_2fClientSocketMessages_2eproto::InitDefaultsLogoutImpl();
+};
+// -------------------------------------------------------------------
+
 class ArduinoWorkoutAction : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:ArduinoWorkoutAction) */ {
  public:
   ArduinoWorkoutAction();
@@ -514,7 +633,7 @@ class ArduinoWorkoutAction : public ::google::protobuf::Message /* @@protoc_inse
                &_ArduinoWorkoutAction_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(ArduinoWorkoutAction* other);
   friend void swap(ArduinoWorkoutAction& a, ArduinoWorkoutAction& b) {
@@ -611,7 +730,7 @@ class WebClientAction : public ::google::protobuf::Message /* @@protoc_insertion
                &_WebClientAction_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(WebClientAction* other);
   friend void swap(WebClientAction& a, WebClientAction& b) {
@@ -724,7 +843,7 @@ class WebClientActionJoin : public ::google::protobuf::Message /* @@protoc_inser
                &_WebClientActionJoin_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(WebClientActionJoin* other);
   friend void swap(WebClientActionJoin& a, WebClientActionJoin& b) {
@@ -1027,6 +1146,52 @@ inline void ArduinoJoin::set_rfidcard(::google::protobuf::int32 value) {
 
 // -------------------------------------------------------------------
 
+// Logout
+
+// int32 rfIdCardNo = 1;
+inline void Logout::clear_rfidcardno() {
+  rfidcardno_ = 0;
+}
+inline ::google::protobuf::int32 Logout::rfidcardno() const {
+  // @@protoc_insertion_point(field_get:Logout.rfIdCardNo)
+  return rfidcardno_;
+}
+inline void Logout::set_rfidcardno(::google::protobuf::int32 value) {
+  
+  rfidcardno_ = value;
+  // @@protoc_insertion_point(field_set:Logout.rfIdCardNo)
+}
+
+// int32 set = 2;
+inline void Logout::clear_set() {
+  set_ = 0;
+}
+inline ::google::protobuf::int32 Logout::set() const {
+  // @@protoc_insertion_point(field_get:Logout.set)
+  return set_;
+}
+inline void Logout::set_set(::google::protobuf::int32 value) {
+  
+  set_ = value;
+  // @@protoc_insertion_point(field_set:Logout.set)
+}
+
+// int32 restTimer = 3;
+inline void Logout::clear_resttimer() {
+  resttimer_ = 0;
+}
+inline ::google::protobuf::int32 Logout::resttimer() const {
+  // @@protoc_insertion_point(field_get:Logout.restTimer)
+  return resttimer_;
+}
+inline void Logout::set_resttimer(::google::protobuf::int32 value) {
+  
+  resttimer_ = value;
+  // @@protoc_insertion_point(field_set:Logout.restTimer)
+}
+
+// -------------------------------------------------------------------
+
 // ArduinoWorkoutAction
 
 // -------------------------------------------------------------------
@@ -1103,6 +1268,8 @@ inline void WebClientActionJoin::set_rfidcardno(::google::protobuf::int32 value)
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

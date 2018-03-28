@@ -30,17 +30,19 @@ public static partial class ClientSocketMessagesReflection {
           "MgwuQXJkdWlub0pvaW5IABI1ChRhcmR1aW5vV29ya291dEFjdGlvbhgCIAEo",
           "CzIVLkFyZHVpbm9Xb3Jrb3V0QWN0aW9uSABCCQoHbWVzc2FnZSIyCgtBcmR1",
           "aW5vSm9pbhIRCglhcmR1aW5vSWQYASABKAUSEAoIcmZJZENhcmQYAiABKAUi",
-          "FgoUQXJkdWlub1dvcmtvdXRBY3Rpb24iUQoPV2ViQ2xpZW50QWN0aW9uEjMK",
-          "E3dlYkNsaWVudEFjdGlvbkpvaW4YASABKAsyFC5XZWJDbGllbnRBY3Rpb25K",
-          "b2luSABCCQoHbWVzc2FnZSIpChNXZWJDbGllbnRBY3Rpb25Kb2luEhIKCnJm",
-          "SWRDYXJkTm8YASABKAUqMAoKQ2xpZW50VHlwZRISCg5BUkRVSU5PX0NMSUVO",
-          "VBAAEg4KCldFQl9DTElFTlQQAWIGcHJvdG8z"));
+          "PAoGTG9nb3V0EhIKCnJmSWRDYXJkTm8YASABKAUSCwoDc2V0GAIgASgFEhEK",
+          "CXJlc3RUaW1lchgDIAEoBSIWChRBcmR1aW5vV29ya291dEFjdGlvbiJRCg9X",
+          "ZWJDbGllbnRBY3Rpb24SMwoTd2ViQ2xpZW50QWN0aW9uSm9pbhgBIAEoCzIU",
+          "LldlYkNsaWVudEFjdGlvbkpvaW5IAEIJCgdtZXNzYWdlIikKE1dlYkNsaWVu",
+          "dEFjdGlvbkpvaW4SEgoKcmZJZENhcmRObxgBIAEoBSowCgpDbGllbnRUeXBl",
+          "EhIKDkFSRFVJTk9fQ0xJRU5UEAASDgoKV0VCX0NMSUVOVBABYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ClientType), }, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::MessageFromClient), global::MessageFromClient.Parser, new[]{ "ClientType", "ArduinoAction", "WebClientAction" }, new[]{ "Message" }, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ArduinoAction), global::ArduinoAction.Parser, new[]{ "ArduinoJoin", "ArduinoWorkoutAction" }, new[]{ "Message" }, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ArduinoJoin), global::ArduinoJoin.Parser, new[]{ "ArduinoId", "RfIdCard" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Logout), global::Logout.Parser, new[]{ "RfIdCardNo", "Set", "RestTimer" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ArduinoWorkoutAction), global::ArduinoWorkoutAction.Parser, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::WebClientAction), global::WebClientAction.Parser, new[]{ "WebClientActionJoin" }, new[]{ "Message" }, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::WebClientActionJoin), global::WebClientActionJoin.Parser, new[]{ "RfIdCardNo" }, null, null, null)
@@ -651,6 +653,191 @@ public sealed partial class ArduinoJoin : pb::IMessage<ArduinoJoin> {
 
 }
 
+public sealed partial class Logout : pb::IMessage<Logout> {
+  private static readonly pb::MessageParser<Logout> _parser = new pb::MessageParser<Logout>(() => new Logout());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<Logout> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[3]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public Logout() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public Logout(Logout other) : this() {
+    rfIdCardNo_ = other.rfIdCardNo_;
+    set_ = other.set_;
+    restTimer_ = other.restTimer_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public Logout Clone() {
+    return new Logout(this);
+  }
+
+  /// <summary>Field number for the "rfIdCardNo" field.</summary>
+  public const int RfIdCardNoFieldNumber = 1;
+  private int rfIdCardNo_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int RfIdCardNo {
+    get { return rfIdCardNo_; }
+    set {
+      rfIdCardNo_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "set" field.</summary>
+  public const int SetFieldNumber = 2;
+  private int set_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int Set {
+    get { return set_; }
+    set {
+      set_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "restTimer" field.</summary>
+  public const int RestTimerFieldNumber = 3;
+  private int restTimer_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int RestTimer {
+    get { return restTimer_; }
+    set {
+      restTimer_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as Logout);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(Logout other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (RfIdCardNo != other.RfIdCardNo) return false;
+    if (Set != other.Set) return false;
+    if (RestTimer != other.RestTimer) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (RfIdCardNo != 0) hash ^= RfIdCardNo.GetHashCode();
+    if (Set != 0) hash ^= Set.GetHashCode();
+    if (RestTimer != 0) hash ^= RestTimer.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (RfIdCardNo != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(RfIdCardNo);
+    }
+    if (Set != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Set);
+    }
+    if (RestTimer != 0) {
+      output.WriteRawTag(24);
+      output.WriteInt32(RestTimer);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (RfIdCardNo != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(RfIdCardNo);
+    }
+    if (Set != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Set);
+    }
+    if (RestTimer != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(RestTimer);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(Logout other) {
+    if (other == null) {
+      return;
+    }
+    if (other.RfIdCardNo != 0) {
+      RfIdCardNo = other.RfIdCardNo;
+    }
+    if (other.Set != 0) {
+      Set = other.Set;
+    }
+    if (other.RestTimer != 0) {
+      RestTimer = other.RestTimer;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          RfIdCardNo = input.ReadInt32();
+          break;
+        }
+        case 16: {
+          Set = input.ReadInt32();
+          break;
+        }
+        case 24: {
+          RestTimer = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
 public sealed partial class ArduinoWorkoutAction : pb::IMessage<ArduinoWorkoutAction> {
   private static readonly pb::MessageParser<ArduinoWorkoutAction> _parser = new pb::MessageParser<ArduinoWorkoutAction>(() => new ArduinoWorkoutAction());
   private pb::UnknownFieldSet _unknownFields;
@@ -659,7 +846,7 @@ public sealed partial class ArduinoWorkoutAction : pb::IMessage<ArduinoWorkoutAc
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[3]; }
+    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[4]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -760,7 +947,7 @@ public sealed partial class WebClientAction : pb::IMessage<WebClientAction> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[4]; }
+    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[5]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -925,7 +1112,7 @@ public sealed partial class WebClientActionJoin : pb::IMessage<WebClientActionJo
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[5]; }
+    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[6]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

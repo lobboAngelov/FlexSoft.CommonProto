@@ -31,15 +31,34 @@ message ArduinoJoin {
 
 message Logout{
 	int32 rfIdCardNo = 1;
-	int32 set= 2;
-	int32 restTimer= 3;
+	int32 machine= 2;
+	int32 set= 3;
+	int32 restTimer= 4;
 }
 
+
+
+message Set{
+	int32 set = 1;
+	int32 restTimer= 2;
+}
 
 
 message ArduinoWorkoutAction{
-	
+	int32 n = 1;
+	int32 powerContract = 2;
+	int32 weight=3;
+	int32 set=4;
+	int32 contract=5;
+	int32 rfIdCardNo=6;
+	int32 machine =7;	
 }
+
+message Xtend{
+	int32 xtend = 1;
+	int32 powerXtend= 2;
+}
+
 
 message WebClientAction{
 	oneof message{

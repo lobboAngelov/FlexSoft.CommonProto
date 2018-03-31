@@ -7,7 +7,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.Logout');
+goog.provide('proto.Xtend');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -24,12 +24,12 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.Logout = function(opt_data) {
+proto.Xtend = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.Logout, jspb.Message);
+goog.inherits(proto.Xtend, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.Logout.displayName = 'proto.Logout';
+  proto.Xtend.displayName = 'proto.Xtend';
 }
 
 
@@ -44,8 +44,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.Logout.prototype.toObject = function(opt_includeInstance) {
-  return proto.Logout.toObject(opt_includeInstance, this);
+proto.Xtend.prototype.toObject = function(opt_includeInstance) {
+  return proto.Xtend.toObject(opt_includeInstance, this);
 };
 
 
@@ -54,16 +54,14 @@ proto.Logout.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.Logout} msg The msg instance to transform.
+ * @param {!proto.Xtend} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.Logout.toObject = function(includeInstance, msg) {
+proto.Xtend.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rfidcardno: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    machine: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    set: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    resttimer: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    xtend: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    powerxtend: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -77,23 +75,23 @@ proto.Logout.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.Logout}
+ * @return {!proto.Xtend}
  */
-proto.Logout.deserializeBinary = function(bytes) {
+proto.Xtend.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.Logout;
-  return proto.Logout.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.Xtend;
+  return proto.Xtend.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.Logout} msg The message object to deserialize into.
+ * @param {!proto.Xtend} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.Logout}
+ * @return {!proto.Xtend}
  */
-proto.Logout.deserializeBinaryFromReader = function(msg, reader) {
+proto.Xtend.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -102,19 +100,11 @@ proto.Logout.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setRfidcardno(value);
+      msg.setXtend(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setMachine(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setSet(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setResttimer(value);
+      msg.setPowerxtend(value);
       break;
     default:
       reader.skipField();
@@ -129,9 +119,9 @@ proto.Logout.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.Logout.prototype.serializeBinary = function() {
+proto.Xtend.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.Logout.serializeBinaryToWriter(this, writer);
+  proto.Xtend.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -139,100 +129,56 @@ proto.Logout.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.Logout} message
+ * @param {!proto.Xtend} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.Logout.serializeBinaryToWriter = function(message, writer) {
+proto.Xtend.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRfidcardno();
+  f = message.getXtend();
   if (f !== 0) {
     writer.writeInt32(
       1,
       f
     );
   }
-  f = message.getMachine();
+  f = message.getPowerxtend();
   if (f !== 0) {
     writer.writeInt32(
       2,
       f
     );
   }
-  f = message.getSet();
-  if (f !== 0) {
-    writer.writeInt32(
-      3,
-      f
-    );
-  }
-  f = message.getResttimer();
-  if (f !== 0) {
-    writer.writeInt32(
-      4,
-      f
-    );
-  }
 };
 
 
 /**
- * optional int32 rfIdCardNo = 1;
+ * optional int32 xtend = 1;
  * @return {number}
  */
-proto.Logout.prototype.getRfidcardno = function() {
+proto.Xtend.prototype.getXtend = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /** @param {number} value */
-proto.Logout.prototype.setRfidcardno = function(value) {
+proto.Xtend.prototype.setXtend = function(value) {
   jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional int32 machine = 2;
+ * optional int32 powerXtend = 2;
  * @return {number}
  */
-proto.Logout.prototype.getMachine = function() {
+proto.Xtend.prototype.getPowerxtend = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /** @param {number} value */
-proto.Logout.prototype.setMachine = function(value) {
+proto.Xtend.prototype.setPowerxtend = function(value) {
   jspb.Message.setProto3IntField(this, 2, value);
-};
-
-
-/**
- * optional int32 set = 3;
- * @return {number}
- */
-proto.Logout.prototype.getSet = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/** @param {number} value */
-proto.Logout.prototype.setSet = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * optional int32 restTimer = 4;
- * @return {number}
- */
-proto.Logout.prototype.getResttimer = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/** @param {number} value */
-proto.Logout.prototype.setResttimer = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 

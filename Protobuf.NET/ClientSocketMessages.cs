@@ -30,20 +30,27 @@ public static partial class ClientSocketMessagesReflection {
           "MgwuQXJkdWlub0pvaW5IABI1ChRhcmR1aW5vV29ya291dEFjdGlvbhgCIAEo",
           "CzIVLkFyZHVpbm9Xb3Jrb3V0QWN0aW9uSABCCQoHbWVzc2FnZSIyCgtBcmR1",
           "aW5vSm9pbhIRCglhcmR1aW5vSWQYASABKAUSEAoIcmZJZENhcmQYAiABKAUi",
-          "PAoGTG9nb3V0EhIKCnJmSWRDYXJkTm8YASABKAUSCwoDc2V0GAIgASgFEhEK",
-          "CXJlc3RUaW1lchgDIAEoBSIWChRBcmR1aW5vV29ya291dEFjdGlvbiJRCg9X",
-          "ZWJDbGllbnRBY3Rpb24SMwoTd2ViQ2xpZW50QWN0aW9uSm9pbhgBIAEoCzIU",
-          "LldlYkNsaWVudEFjdGlvbkpvaW5IAEIJCgdtZXNzYWdlIikKE1dlYkNsaWVu",
-          "dEFjdGlvbkpvaW4SEgoKcmZJZENhcmRObxgBIAEoBSowCgpDbGllbnRUeXBl",
-          "EhIKDkFSRFVJTk9fQ0xJRU5UEAASDgoKV0VCX0NMSUVOVBABYgZwcm90bzM="));
+          "TQoGTG9nb3V0EhIKCnJmSWRDYXJkTm8YASABKAUSDwoHbWFjaGluZRgCIAEo",
+          "BRILCgNzZXQYAyABKAUSEQoJcmVzdFRpbWVyGAQgASgFIiUKA1NldBILCgNz",
+          "ZXQYASABKAUSEQoJcmVzdFRpbWVyGAIgASgFIowBChRBcmR1aW5vV29ya291",
+          "dEFjdGlvbhIJCgFuGAEgASgFEhUKDXBvd2VyQ29udHJhY3QYAiABKAUSDgoG",
+          "d2VpZ2h0GAMgASgFEgsKA3NldBgEIAEoBRIQCghjb250cmFjdBgFIAEoBRIS",
+          "CgpyZklkQ2FyZE5vGAYgASgFEg8KB21hY2hpbmUYByABKAUiKgoFWHRlbmQS",
+          "DQoFeHRlbmQYASABKAUSEgoKcG93ZXJYdGVuZBgCIAEoBSJRCg9XZWJDbGll",
+          "bnRBY3Rpb24SMwoTd2ViQ2xpZW50QWN0aW9uSm9pbhgBIAEoCzIULldlYkNs",
+          "aWVudEFjdGlvbkpvaW5IAEIJCgdtZXNzYWdlIikKE1dlYkNsaWVudEFjdGlv",
+          "bkpvaW4SEgoKcmZJZENhcmRObxgBIAEoBSowCgpDbGllbnRUeXBlEhIKDkFS",
+          "RFVJTk9fQ0xJRU5UEAASDgoKV0VCX0NMSUVOVBABYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ClientType), }, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::MessageFromClient), global::MessageFromClient.Parser, new[]{ "ClientType", "ArduinoAction", "WebClientAction" }, new[]{ "Message" }, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ArduinoAction), global::ArduinoAction.Parser, new[]{ "ArduinoJoin", "ArduinoWorkoutAction" }, new[]{ "Message" }, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ArduinoJoin), global::ArduinoJoin.Parser, new[]{ "ArduinoId", "RfIdCard" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::Logout), global::Logout.Parser, new[]{ "RfIdCardNo", "Set", "RestTimer" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ArduinoWorkoutAction), global::ArduinoWorkoutAction.Parser, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Logout), global::Logout.Parser, new[]{ "RfIdCardNo", "Machine", "Set", "RestTimer" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Set), global::Set.Parser, new[]{ "Set_", "RestTimer" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ArduinoWorkoutAction), global::ArduinoWorkoutAction.Parser, new[]{ "N", "PowerContract", "Weight", "Set", "Contract", "RfIdCardNo", "Machine" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Xtend), global::Xtend.Parser, new[]{ "Xtend_", "PowerXtend" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::WebClientAction), global::WebClientAction.Parser, new[]{ "WebClientActionJoin" }, new[]{ "Message" }, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::WebClientActionJoin), global::WebClientActionJoin.Parser, new[]{ "RfIdCardNo" }, null, null, null)
         }));
@@ -679,6 +686,7 @@ public sealed partial class Logout : pb::IMessage<Logout> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public Logout(Logout other) : this() {
     rfIdCardNo_ = other.rfIdCardNo_;
+    machine_ = other.machine_;
     set_ = other.set_;
     restTimer_ = other.restTimer_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -700,8 +708,19 @@ public sealed partial class Logout : pb::IMessage<Logout> {
     }
   }
 
+  /// <summary>Field number for the "machine" field.</summary>
+  public const int MachineFieldNumber = 2;
+  private int machine_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int Machine {
+    get { return machine_; }
+    set {
+      machine_ = value;
+    }
+  }
+
   /// <summary>Field number for the "set" field.</summary>
-  public const int SetFieldNumber = 2;
+  public const int SetFieldNumber = 3;
   private int set_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int Set {
@@ -712,7 +731,7 @@ public sealed partial class Logout : pb::IMessage<Logout> {
   }
 
   /// <summary>Field number for the "restTimer" field.</summary>
-  public const int RestTimerFieldNumber = 3;
+  public const int RestTimerFieldNumber = 4;
   private int restTimer_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int RestTimer {
@@ -736,6 +755,7 @@ public sealed partial class Logout : pb::IMessage<Logout> {
       return true;
     }
     if (RfIdCardNo != other.RfIdCardNo) return false;
+    if (Machine != other.Machine) return false;
     if (Set != other.Set) return false;
     if (RestTimer != other.RestTimer) return false;
     return Equals(_unknownFields, other._unknownFields);
@@ -745,6 +765,7 @@ public sealed partial class Logout : pb::IMessage<Logout> {
   public override int GetHashCode() {
     int hash = 1;
     if (RfIdCardNo != 0) hash ^= RfIdCardNo.GetHashCode();
+    if (Machine != 0) hash ^= Machine.GetHashCode();
     if (Set != 0) hash ^= Set.GetHashCode();
     if (RestTimer != 0) hash ^= RestTimer.GetHashCode();
     if (_unknownFields != null) {
@@ -764,12 +785,16 @@ public sealed partial class Logout : pb::IMessage<Logout> {
       output.WriteRawTag(8);
       output.WriteInt32(RfIdCardNo);
     }
-    if (Set != 0) {
+    if (Machine != 0) {
       output.WriteRawTag(16);
+      output.WriteInt32(Machine);
+    }
+    if (Set != 0) {
+      output.WriteRawTag(24);
       output.WriteInt32(Set);
     }
     if (RestTimer != 0) {
-      output.WriteRawTag(24);
+      output.WriteRawTag(32);
       output.WriteInt32(RestTimer);
     }
     if (_unknownFields != null) {
@@ -782,6 +807,9 @@ public sealed partial class Logout : pb::IMessage<Logout> {
     int size = 0;
     if (RfIdCardNo != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(RfIdCardNo);
+    }
+    if (Machine != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Machine);
     }
     if (Set != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(Set);
@@ -802,6 +830,9 @@ public sealed partial class Logout : pb::IMessage<Logout> {
     }
     if (other.RfIdCardNo != 0) {
       RfIdCardNo = other.RfIdCardNo;
+    }
+    if (other.Machine != 0) {
+      Machine = other.Machine;
     }
     if (other.Set != 0) {
       Set = other.Set;
@@ -825,10 +856,171 @@ public sealed partial class Logout : pb::IMessage<Logout> {
           break;
         }
         case 16: {
-          Set = input.ReadInt32();
+          Machine = input.ReadInt32();
           break;
         }
         case 24: {
+          Set = input.ReadInt32();
+          break;
+        }
+        case 32: {
+          RestTimer = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class Set : pb::IMessage<Set> {
+  private static readonly pb::MessageParser<Set> _parser = new pb::MessageParser<Set>(() => new Set());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<Set> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[4]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public Set() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public Set(Set other) : this() {
+    set_ = other.set_;
+    restTimer_ = other.restTimer_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public Set Clone() {
+    return new Set(this);
+  }
+
+  /// <summary>Field number for the "set" field.</summary>
+  public const int Set_FieldNumber = 1;
+  private int set_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int Set_ {
+    get { return set_; }
+    set {
+      set_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "restTimer" field.</summary>
+  public const int RestTimerFieldNumber = 2;
+  private int restTimer_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int RestTimer {
+    get { return restTimer_; }
+    set {
+      restTimer_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as Set);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(Set other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (Set_ != other.Set_) return false;
+    if (RestTimer != other.RestTimer) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Set_ != 0) hash ^= Set_.GetHashCode();
+    if (RestTimer != 0) hash ^= RestTimer.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (Set_ != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(Set_);
+    }
+    if (RestTimer != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(RestTimer);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (Set_ != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Set_);
+    }
+    if (RestTimer != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(RestTimer);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(Set other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Set_ != 0) {
+      Set_ = other.Set_;
+    }
+    if (other.RestTimer != 0) {
+      RestTimer = other.RestTimer;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          Set_ = input.ReadInt32();
+          break;
+        }
+        case 16: {
           RestTimer = input.ReadInt32();
           break;
         }
@@ -846,7 +1038,7 @@ public sealed partial class ArduinoWorkoutAction : pb::IMessage<ArduinoWorkoutAc
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[4]; }
+    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[5]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -863,12 +1055,96 @@ public sealed partial class ArduinoWorkoutAction : pb::IMessage<ArduinoWorkoutAc
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public ArduinoWorkoutAction(ArduinoWorkoutAction other) : this() {
+    n_ = other.n_;
+    powerContract_ = other.powerContract_;
+    weight_ = other.weight_;
+    set_ = other.set_;
+    contract_ = other.contract_;
+    rfIdCardNo_ = other.rfIdCardNo_;
+    machine_ = other.machine_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public ArduinoWorkoutAction Clone() {
     return new ArduinoWorkoutAction(this);
+  }
+
+  /// <summary>Field number for the "n" field.</summary>
+  public const int NFieldNumber = 1;
+  private int n_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int N {
+    get { return n_; }
+    set {
+      n_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "powerContract" field.</summary>
+  public const int PowerContractFieldNumber = 2;
+  private int powerContract_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int PowerContract {
+    get { return powerContract_; }
+    set {
+      powerContract_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "weight" field.</summary>
+  public const int WeightFieldNumber = 3;
+  private int weight_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int Weight {
+    get { return weight_; }
+    set {
+      weight_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "set" field.</summary>
+  public const int SetFieldNumber = 4;
+  private int set_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int Set {
+    get { return set_; }
+    set {
+      set_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "contract" field.</summary>
+  public const int ContractFieldNumber = 5;
+  private int contract_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int Contract {
+    get { return contract_; }
+    set {
+      contract_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "rfIdCardNo" field.</summary>
+  public const int RfIdCardNoFieldNumber = 6;
+  private int rfIdCardNo_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int RfIdCardNo {
+    get { return rfIdCardNo_; }
+    set {
+      rfIdCardNo_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "machine" field.</summary>
+  public const int MachineFieldNumber = 7;
+  private int machine_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int Machine {
+    get { return machine_; }
+    set {
+      machine_ = value;
+    }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -884,12 +1160,26 @@ public sealed partial class ArduinoWorkoutAction : pb::IMessage<ArduinoWorkoutAc
     if (ReferenceEquals(other, this)) {
       return true;
     }
+    if (N != other.N) return false;
+    if (PowerContract != other.PowerContract) return false;
+    if (Weight != other.Weight) return false;
+    if (Set != other.Set) return false;
+    if (Contract != other.Contract) return false;
+    if (RfIdCardNo != other.RfIdCardNo) return false;
+    if (Machine != other.Machine) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
+    if (N != 0) hash ^= N.GetHashCode();
+    if (PowerContract != 0) hash ^= PowerContract.GetHashCode();
+    if (Weight != 0) hash ^= Weight.GetHashCode();
+    if (Set != 0) hash ^= Set.GetHashCode();
+    if (Contract != 0) hash ^= Contract.GetHashCode();
+    if (RfIdCardNo != 0) hash ^= RfIdCardNo.GetHashCode();
+    if (Machine != 0) hash ^= Machine.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -903,6 +1193,34 @@ public sealed partial class ArduinoWorkoutAction : pb::IMessage<ArduinoWorkoutAc
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+    if (N != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(N);
+    }
+    if (PowerContract != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(PowerContract);
+    }
+    if (Weight != 0) {
+      output.WriteRawTag(24);
+      output.WriteInt32(Weight);
+    }
+    if (Set != 0) {
+      output.WriteRawTag(32);
+      output.WriteInt32(Set);
+    }
+    if (Contract != 0) {
+      output.WriteRawTag(40);
+      output.WriteInt32(Contract);
+    }
+    if (RfIdCardNo != 0) {
+      output.WriteRawTag(48);
+      output.WriteInt32(RfIdCardNo);
+    }
+    if (Machine != 0) {
+      output.WriteRawTag(56);
+      output.WriteInt32(Machine);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -911,6 +1229,27 @@ public sealed partial class ArduinoWorkoutAction : pb::IMessage<ArduinoWorkoutAc
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
+    if (N != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(N);
+    }
+    if (PowerContract != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(PowerContract);
+    }
+    if (Weight != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Weight);
+    }
+    if (Set != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Set);
+    }
+    if (Contract != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Contract);
+    }
+    if (RfIdCardNo != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(RfIdCardNo);
+    }
+    if (Machine != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Machine);
+    }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -921,6 +1260,27 @@ public sealed partial class ArduinoWorkoutAction : pb::IMessage<ArduinoWorkoutAc
   public void MergeFrom(ArduinoWorkoutAction other) {
     if (other == null) {
       return;
+    }
+    if (other.N != 0) {
+      N = other.N;
+    }
+    if (other.PowerContract != 0) {
+      PowerContract = other.PowerContract;
+    }
+    if (other.Weight != 0) {
+      Weight = other.Weight;
+    }
+    if (other.Set != 0) {
+      Set = other.Set;
+    }
+    if (other.Contract != 0) {
+      Contract = other.Contract;
+    }
+    if (other.RfIdCardNo != 0) {
+      RfIdCardNo = other.RfIdCardNo;
+    }
+    if (other.Machine != 0) {
+      Machine = other.Machine;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -933,6 +1293,191 @@ public sealed partial class ArduinoWorkoutAction : pb::IMessage<ArduinoWorkoutAc
         default:
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
+        case 8: {
+          N = input.ReadInt32();
+          break;
+        }
+        case 16: {
+          PowerContract = input.ReadInt32();
+          break;
+        }
+        case 24: {
+          Weight = input.ReadInt32();
+          break;
+        }
+        case 32: {
+          Set = input.ReadInt32();
+          break;
+        }
+        case 40: {
+          Contract = input.ReadInt32();
+          break;
+        }
+        case 48: {
+          RfIdCardNo = input.ReadInt32();
+          break;
+        }
+        case 56: {
+          Machine = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class Xtend : pb::IMessage<Xtend> {
+  private static readonly pb::MessageParser<Xtend> _parser = new pb::MessageParser<Xtend>(() => new Xtend());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<Xtend> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[6]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public Xtend() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public Xtend(Xtend other) : this() {
+    xtend_ = other.xtend_;
+    powerXtend_ = other.powerXtend_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public Xtend Clone() {
+    return new Xtend(this);
+  }
+
+  /// <summary>Field number for the "xtend" field.</summary>
+  public const int Xtend_FieldNumber = 1;
+  private int xtend_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int Xtend_ {
+    get { return xtend_; }
+    set {
+      xtend_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "powerXtend" field.</summary>
+  public const int PowerXtendFieldNumber = 2;
+  private int powerXtend_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int PowerXtend {
+    get { return powerXtend_; }
+    set {
+      powerXtend_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as Xtend);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(Xtend other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (Xtend_ != other.Xtend_) return false;
+    if (PowerXtend != other.PowerXtend) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Xtend_ != 0) hash ^= Xtend_.GetHashCode();
+    if (PowerXtend != 0) hash ^= PowerXtend.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (Xtend_ != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(Xtend_);
+    }
+    if (PowerXtend != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(PowerXtend);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (Xtend_ != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Xtend_);
+    }
+    if (PowerXtend != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(PowerXtend);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(Xtend other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Xtend_ != 0) {
+      Xtend_ = other.Xtend_;
+    }
+    if (other.PowerXtend != 0) {
+      PowerXtend = other.PowerXtend;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          Xtend_ = input.ReadInt32();
+          break;
+        }
+        case 16: {
+          PowerXtend = input.ReadInt32();
+          break;
+        }
       }
     }
   }
@@ -947,7 +1492,7 @@ public sealed partial class WebClientAction : pb::IMessage<WebClientAction> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[5]; }
+    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[7]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1112,7 +1657,7 @@ public sealed partial class WebClientActionJoin : pb::IMessage<WebClientActionJo
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[6]; }
+    get { return global::ClientSocketMessagesReflection.Descriptor.MessageTypes[8]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -37,7 +37,7 @@ namespace protobuf_Protos_2fClientSocketMessages_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[7];
+  static const ::google::protobuf::internal::ParseTable schema[9];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -51,8 +51,12 @@ void InitDefaultsArduinoJoinImpl();
 void InitDefaultsArduinoJoin();
 void InitDefaultsLogoutImpl();
 void InitDefaultsLogout();
+void InitDefaultsSetImpl();
+void InitDefaultsSet();
 void InitDefaultsArduinoWorkoutActionImpl();
 void InitDefaultsArduinoWorkoutAction();
+void InitDefaultsXtendImpl();
+void InitDefaultsXtend();
 void InitDefaultsWebClientActionImpl();
 void InitDefaultsWebClientAction();
 void InitDefaultsWebClientActionJoinImpl();
@@ -62,7 +66,9 @@ inline void InitDefaults() {
   InitDefaultsArduinoAction();
   InitDefaultsArduinoJoin();
   InitDefaultsLogout();
+  InitDefaultsSet();
   InitDefaultsArduinoWorkoutAction();
+  InitDefaultsXtend();
   InitDefaultsWebClientAction();
   InitDefaultsWebClientActionJoin();
 }
@@ -82,12 +88,18 @@ extern LogoutDefaultTypeInternal _Logout_default_instance_;
 class MessageFromClient;
 class MessageFromClientDefaultTypeInternal;
 extern MessageFromClientDefaultTypeInternal _MessageFromClient_default_instance_;
+class Set;
+class SetDefaultTypeInternal;
+extern SetDefaultTypeInternal _Set_default_instance_;
 class WebClientAction;
 class WebClientActionDefaultTypeInternal;
 extern WebClientActionDefaultTypeInternal _WebClientAction_default_instance_;
 class WebClientActionJoin;
 class WebClientActionJoinDefaultTypeInternal;
 extern WebClientActionJoinDefaultTypeInternal _WebClientActionJoin_default_instance_;
+class Xtend;
+class XtendDefaultTypeInternal;
+extern XtendDefaultTypeInternal _Xtend_default_instance_;
 
 enum ClientType {
   ARDUINO_CLIENT = 0,
@@ -573,15 +585,21 @@ class Logout : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::google::protobuf::int32 rfidcardno() const;
   void set_rfidcardno(::google::protobuf::int32 value);
 
-  // int32 set = 2;
+  // int32 machine = 2;
+  void clear_machine();
+  static const int kMachineFieldNumber = 2;
+  ::google::protobuf::int32 machine() const;
+  void set_machine(::google::protobuf::int32 value);
+
+  // int32 set = 3;
   void clear_set();
-  static const int kSetFieldNumber = 2;
+  static const int kSetFieldNumber = 3;
   ::google::protobuf::int32 set() const;
   void set_set(::google::protobuf::int32 value);
 
-  // int32 restTimer = 3;
+  // int32 restTimer = 4;
   void clear_resttimer();
-  static const int kRestTimerFieldNumber = 3;
+  static const int kRestTimerFieldNumber = 4;
   ::google::protobuf::int32 resttimer() const;
   void set_resttimer(::google::protobuf::int32 value);
 
@@ -590,11 +608,118 @@ class Logout : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::int32 rfidcardno_;
+  ::google::protobuf::int32 machine_;
   ::google::protobuf::int32 set_;
   ::google::protobuf::int32 resttimer_;
   mutable int _cached_size_;
   friend struct ::protobuf_Protos_2fClientSocketMessages_2eproto::TableStruct;
   friend void ::protobuf_Protos_2fClientSocketMessages_2eproto::InitDefaultsLogoutImpl();
+};
+// -------------------------------------------------------------------
+
+class Set : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Set) */ {
+ public:
+  Set();
+  virtual ~Set();
+
+  Set(const Set& from);
+
+  inline Set& operator=(const Set& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Set(Set&& from) noexcept
+    : Set() {
+    *this = ::std::move(from);
+  }
+
+  inline Set& operator=(Set&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Set& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Set* internal_default_instance() {
+    return reinterpret_cast<const Set*>(
+               &_Set_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    4;
+
+  void Swap(Set* other);
+  friend void swap(Set& a, Set& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Set* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  Set* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const Set& from);
+  void MergeFrom(const Set& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(Set* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 set = 1;
+  void clear_set();
+  static const int kSetFieldNumber = 1;
+  ::google::protobuf::int32 set() const;
+  void set_set(::google::protobuf::int32 value);
+
+  // int32 restTimer = 2;
+  void clear_resttimer();
+  static const int kRestTimerFieldNumber = 2;
+  ::google::protobuf::int32 resttimer() const;
+  void set_resttimer(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:Set)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 set_;
+  ::google::protobuf::int32 resttimer_;
+  mutable int _cached_size_;
+  friend struct ::protobuf_Protos_2fClientSocketMessages_2eproto::TableStruct;
+  friend void ::protobuf_Protos_2fClientSocketMessages_2eproto::InitDefaultsSetImpl();
 };
 // -------------------------------------------------------------------
 
@@ -633,7 +758,7 @@ class ArduinoWorkoutAction : public ::google::protobuf::Message /* @@protoc_inse
                &_ArduinoWorkoutAction_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(ArduinoWorkoutAction* other);
   friend void swap(ArduinoWorkoutAction& a, ArduinoWorkoutAction& b) {
@@ -680,13 +805,168 @@ class ArduinoWorkoutAction : public ::google::protobuf::Message /* @@protoc_inse
 
   // accessors -------------------------------------------------------
 
+  // int32 n = 1;
+  void clear_n();
+  static const int kNFieldNumber = 1;
+  ::google::protobuf::int32 n() const;
+  void set_n(::google::protobuf::int32 value);
+
+  // int32 powerContract = 2;
+  void clear_powercontract();
+  static const int kPowerContractFieldNumber = 2;
+  ::google::protobuf::int32 powercontract() const;
+  void set_powercontract(::google::protobuf::int32 value);
+
+  // int32 weight = 3;
+  void clear_weight();
+  static const int kWeightFieldNumber = 3;
+  ::google::protobuf::int32 weight() const;
+  void set_weight(::google::protobuf::int32 value);
+
+  // int32 set = 4;
+  void clear_set();
+  static const int kSetFieldNumber = 4;
+  ::google::protobuf::int32 set() const;
+  void set_set(::google::protobuf::int32 value);
+
+  // int32 contract = 5;
+  void clear_contract();
+  static const int kContractFieldNumber = 5;
+  ::google::protobuf::int32 contract() const;
+  void set_contract(::google::protobuf::int32 value);
+
+  // int32 rfIdCardNo = 6;
+  void clear_rfidcardno();
+  static const int kRfIdCardNoFieldNumber = 6;
+  ::google::protobuf::int32 rfidcardno() const;
+  void set_rfidcardno(::google::protobuf::int32 value);
+
+  // int32 machine = 7;
+  void clear_machine();
+  static const int kMachineFieldNumber = 7;
+  ::google::protobuf::int32 machine() const;
+  void set_machine(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:ArduinoWorkoutAction)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 n_;
+  ::google::protobuf::int32 powercontract_;
+  ::google::protobuf::int32 weight_;
+  ::google::protobuf::int32 set_;
+  ::google::protobuf::int32 contract_;
+  ::google::protobuf::int32 rfidcardno_;
+  ::google::protobuf::int32 machine_;
   mutable int _cached_size_;
   friend struct ::protobuf_Protos_2fClientSocketMessages_2eproto::TableStruct;
   friend void ::protobuf_Protos_2fClientSocketMessages_2eproto::InitDefaultsArduinoWorkoutActionImpl();
+};
+// -------------------------------------------------------------------
+
+class Xtend : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Xtend) */ {
+ public:
+  Xtend();
+  virtual ~Xtend();
+
+  Xtend(const Xtend& from);
+
+  inline Xtend& operator=(const Xtend& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Xtend(Xtend&& from) noexcept
+    : Xtend() {
+    *this = ::std::move(from);
+  }
+
+  inline Xtend& operator=(Xtend&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Xtend& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Xtend* internal_default_instance() {
+    return reinterpret_cast<const Xtend*>(
+               &_Xtend_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    6;
+
+  void Swap(Xtend* other);
+  friend void swap(Xtend& a, Xtend& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Xtend* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  Xtend* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const Xtend& from);
+  void MergeFrom(const Xtend& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(Xtend* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 xtend = 1;
+  void clear_xtend();
+  static const int kXtendFieldNumber = 1;
+  ::google::protobuf::int32 xtend() const;
+  void set_xtend(::google::protobuf::int32 value);
+
+  // int32 powerXtend = 2;
+  void clear_powerxtend();
+  static const int kPowerXtendFieldNumber = 2;
+  ::google::protobuf::int32 powerxtend() const;
+  void set_powerxtend(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:Xtend)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 xtend_;
+  ::google::protobuf::int32 powerxtend_;
+  mutable int _cached_size_;
+  friend struct ::protobuf_Protos_2fClientSocketMessages_2eproto::TableStruct;
+  friend void ::protobuf_Protos_2fClientSocketMessages_2eproto::InitDefaultsXtendImpl();
 };
 // -------------------------------------------------------------------
 
@@ -730,7 +1010,7 @@ class WebClientAction : public ::google::protobuf::Message /* @@protoc_insertion
                &_WebClientAction_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    5;
+    7;
 
   void Swap(WebClientAction* other);
   friend void swap(WebClientAction& a, WebClientAction& b) {
@@ -843,7 +1123,7 @@ class WebClientActionJoin : public ::google::protobuf::Message /* @@protoc_inser
                &_WebClientActionJoin_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    6;
+    8;
 
   void Swap(WebClientActionJoin* other);
   friend void swap(WebClientActionJoin& a, WebClientActionJoin& b) {
@@ -1162,7 +1442,21 @@ inline void Logout::set_rfidcardno(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:Logout.rfIdCardNo)
 }
 
-// int32 set = 2;
+// int32 machine = 2;
+inline void Logout::clear_machine() {
+  machine_ = 0;
+}
+inline ::google::protobuf::int32 Logout::machine() const {
+  // @@protoc_insertion_point(field_get:Logout.machine)
+  return machine_;
+}
+inline void Logout::set_machine(::google::protobuf::int32 value) {
+  
+  machine_ = value;
+  // @@protoc_insertion_point(field_set:Logout.machine)
+}
+
+// int32 set = 3;
 inline void Logout::clear_set() {
   set_ = 0;
 }
@@ -1176,7 +1470,7 @@ inline void Logout::set_set(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:Logout.set)
 }
 
-// int32 restTimer = 3;
+// int32 restTimer = 4;
 inline void Logout::clear_resttimer() {
   resttimer_ = 0;
 }
@@ -1192,7 +1486,169 @@ inline void Logout::set_resttimer(::google::protobuf::int32 value) {
 
 // -------------------------------------------------------------------
 
+// Set
+
+// int32 set = 1;
+inline void Set::clear_set() {
+  set_ = 0;
+}
+inline ::google::protobuf::int32 Set::set() const {
+  // @@protoc_insertion_point(field_get:Set.set)
+  return set_;
+}
+inline void Set::set_set(::google::protobuf::int32 value) {
+  
+  set_ = value;
+  // @@protoc_insertion_point(field_set:Set.set)
+}
+
+// int32 restTimer = 2;
+inline void Set::clear_resttimer() {
+  resttimer_ = 0;
+}
+inline ::google::protobuf::int32 Set::resttimer() const {
+  // @@protoc_insertion_point(field_get:Set.restTimer)
+  return resttimer_;
+}
+inline void Set::set_resttimer(::google::protobuf::int32 value) {
+  
+  resttimer_ = value;
+  // @@protoc_insertion_point(field_set:Set.restTimer)
+}
+
+// -------------------------------------------------------------------
+
 // ArduinoWorkoutAction
+
+// int32 n = 1;
+inline void ArduinoWorkoutAction::clear_n() {
+  n_ = 0;
+}
+inline ::google::protobuf::int32 ArduinoWorkoutAction::n() const {
+  // @@protoc_insertion_point(field_get:ArduinoWorkoutAction.n)
+  return n_;
+}
+inline void ArduinoWorkoutAction::set_n(::google::protobuf::int32 value) {
+  
+  n_ = value;
+  // @@protoc_insertion_point(field_set:ArduinoWorkoutAction.n)
+}
+
+// int32 powerContract = 2;
+inline void ArduinoWorkoutAction::clear_powercontract() {
+  powercontract_ = 0;
+}
+inline ::google::protobuf::int32 ArduinoWorkoutAction::powercontract() const {
+  // @@protoc_insertion_point(field_get:ArduinoWorkoutAction.powerContract)
+  return powercontract_;
+}
+inline void ArduinoWorkoutAction::set_powercontract(::google::protobuf::int32 value) {
+  
+  powercontract_ = value;
+  // @@protoc_insertion_point(field_set:ArduinoWorkoutAction.powerContract)
+}
+
+// int32 weight = 3;
+inline void ArduinoWorkoutAction::clear_weight() {
+  weight_ = 0;
+}
+inline ::google::protobuf::int32 ArduinoWorkoutAction::weight() const {
+  // @@protoc_insertion_point(field_get:ArduinoWorkoutAction.weight)
+  return weight_;
+}
+inline void ArduinoWorkoutAction::set_weight(::google::protobuf::int32 value) {
+  
+  weight_ = value;
+  // @@protoc_insertion_point(field_set:ArduinoWorkoutAction.weight)
+}
+
+// int32 set = 4;
+inline void ArduinoWorkoutAction::clear_set() {
+  set_ = 0;
+}
+inline ::google::protobuf::int32 ArduinoWorkoutAction::set() const {
+  // @@protoc_insertion_point(field_get:ArduinoWorkoutAction.set)
+  return set_;
+}
+inline void ArduinoWorkoutAction::set_set(::google::protobuf::int32 value) {
+  
+  set_ = value;
+  // @@protoc_insertion_point(field_set:ArduinoWorkoutAction.set)
+}
+
+// int32 contract = 5;
+inline void ArduinoWorkoutAction::clear_contract() {
+  contract_ = 0;
+}
+inline ::google::protobuf::int32 ArduinoWorkoutAction::contract() const {
+  // @@protoc_insertion_point(field_get:ArduinoWorkoutAction.contract)
+  return contract_;
+}
+inline void ArduinoWorkoutAction::set_contract(::google::protobuf::int32 value) {
+  
+  contract_ = value;
+  // @@protoc_insertion_point(field_set:ArduinoWorkoutAction.contract)
+}
+
+// int32 rfIdCardNo = 6;
+inline void ArduinoWorkoutAction::clear_rfidcardno() {
+  rfidcardno_ = 0;
+}
+inline ::google::protobuf::int32 ArduinoWorkoutAction::rfidcardno() const {
+  // @@protoc_insertion_point(field_get:ArduinoWorkoutAction.rfIdCardNo)
+  return rfidcardno_;
+}
+inline void ArduinoWorkoutAction::set_rfidcardno(::google::protobuf::int32 value) {
+  
+  rfidcardno_ = value;
+  // @@protoc_insertion_point(field_set:ArduinoWorkoutAction.rfIdCardNo)
+}
+
+// int32 machine = 7;
+inline void ArduinoWorkoutAction::clear_machine() {
+  machine_ = 0;
+}
+inline ::google::protobuf::int32 ArduinoWorkoutAction::machine() const {
+  // @@protoc_insertion_point(field_get:ArduinoWorkoutAction.machine)
+  return machine_;
+}
+inline void ArduinoWorkoutAction::set_machine(::google::protobuf::int32 value) {
+  
+  machine_ = value;
+  // @@protoc_insertion_point(field_set:ArduinoWorkoutAction.machine)
+}
+
+// -------------------------------------------------------------------
+
+// Xtend
+
+// int32 xtend = 1;
+inline void Xtend::clear_xtend() {
+  xtend_ = 0;
+}
+inline ::google::protobuf::int32 Xtend::xtend() const {
+  // @@protoc_insertion_point(field_get:Xtend.xtend)
+  return xtend_;
+}
+inline void Xtend::set_xtend(::google::protobuf::int32 value) {
+  
+  xtend_ = value;
+  // @@protoc_insertion_point(field_set:Xtend.xtend)
+}
+
+// int32 powerXtend = 2;
+inline void Xtend::clear_powerxtend() {
+  powerxtend_ = 0;
+}
+inline ::google::protobuf::int32 Xtend::powerxtend() const {
+  // @@protoc_insertion_point(field_get:Xtend.powerXtend)
+  return powerxtend_;
+}
+inline void Xtend::set_powerxtend(::google::protobuf::int32 value) {
+  
+  powerxtend_ = value;
+  // @@protoc_insertion_point(field_set:Xtend.powerXtend)
+}
 
 // -------------------------------------------------------------------
 
@@ -1268,6 +1724,10 @@ inline void WebClientActionJoin::set_rfidcardno(::google::protobuf::int32 value)
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

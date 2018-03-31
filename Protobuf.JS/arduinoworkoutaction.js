@@ -60,7 +60,13 @@ proto.ArduinoWorkoutAction.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ArduinoWorkoutAction.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    n: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    powercontract: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    weight: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    set: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    contract: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    rfidcardno: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    machine: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -97,6 +103,34 @@ proto.ArduinoWorkoutAction.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setN(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPowercontract(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setWeight(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSet(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setContract(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRfidcardno(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMachine(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -126,6 +160,160 @@ proto.ArduinoWorkoutAction.prototype.serializeBinary = function() {
  */
 proto.ArduinoWorkoutAction.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getN();
+  if (f !== 0) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
+  f = message.getPowercontract();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = message.getWeight();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getSet();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = message.getContract();
+  if (f !== 0) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+  f = message.getRfidcardno();
+  if (f !== 0) {
+    writer.writeInt32(
+      6,
+      f
+    );
+  }
+  f = message.getMachine();
+  if (f !== 0) {
+    writer.writeInt32(
+      7,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int32 n = 1;
+ * @return {number}
+ */
+proto.ArduinoWorkoutAction.prototype.getN = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/** @param {number} value */
+proto.ArduinoWorkoutAction.prototype.setN = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional int32 powerContract = 2;
+ * @return {number}
+ */
+proto.ArduinoWorkoutAction.prototype.getPowercontract = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {number} value */
+proto.ArduinoWorkoutAction.prototype.setPowercontract = function(value) {
+  jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional int32 weight = 3;
+ * @return {number}
+ */
+proto.ArduinoWorkoutAction.prototype.getWeight = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/** @param {number} value */
+proto.ArduinoWorkoutAction.prototype.setWeight = function(value) {
+  jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional int32 set = 4;
+ * @return {number}
+ */
+proto.ArduinoWorkoutAction.prototype.getSet = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/** @param {number} value */
+proto.ArduinoWorkoutAction.prototype.setSet = function(value) {
+  jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional int32 contract = 5;
+ * @return {number}
+ */
+proto.ArduinoWorkoutAction.prototype.getContract = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/** @param {number} value */
+proto.ArduinoWorkoutAction.prototype.setContract = function(value) {
+  jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional int32 rfIdCardNo = 6;
+ * @return {number}
+ */
+proto.ArduinoWorkoutAction.prototype.getRfidcardno = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/** @param {number} value */
+proto.ArduinoWorkoutAction.prototype.setRfidcardno = function(value) {
+  jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional int32 machine = 7;
+ * @return {number}
+ */
+proto.ArduinoWorkoutAction.prototype.getMachine = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/** @param {number} value */
+proto.ArduinoWorkoutAction.prototype.setMachine = function(value) {
+  jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
